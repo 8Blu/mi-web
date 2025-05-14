@@ -1,17 +1,20 @@
-# Imagen base Linux
+# Imagen base ligera y limpia
 FROM ubuntu:latest
 
-# Instalar Git (opcional, si usarás git clone en CI/CD)
-RUN apk update && apk add git
+# Evita errores de interacción
+ENV DEBIAN_FRONTEND=noninteractive
 
-# Crear una carpeta dentro del contenedor para tu web
-RUN mkdir /app
+# Actualiza y agrega git (opcional)
+RUN apt update && apt install -y git && apt clean
 
-# Copiar el contenido de src/ en tu proyecto local al contenedor
-COPY src/ /app
+# Crea un directorio dentro del contenedor para guardar la web
+RUN mkdir -p /mi-web
+
+# Copia tu web al contenedor
+COPY src/ /mi-web
 
 # Establece el directorio de trabajo
-WORKDIR /app
+WORKDIR /mi-web
 
-# Comando por defecto cuando se ejecuta el contenedor
-CMD ["sh"]
+# Comando por defecto (para que el contenedor quede activo en pruebas)
+CMD ["tail", "-f", "/dev/null"]

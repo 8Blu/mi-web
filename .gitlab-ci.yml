@@ -8,15 +8,19 @@ variables:
 
 stages:
   - build
-  - deploy
+  - verify
 
 build-image:
   stage: build
   script:
-    - docker build -t miweb:latest .
+    - docker build -t mi-web:sin-nginx .
+    - docker images
 
-deploy:
-  stage: deploy
+verify-content:
+  stage: verify
   script:
-    - docker run -d --name demo-web -p 8080:80 miweb:latest
-    - echo "Contenedor en ejecución para pruebas"
+    - docker create --name temp mi-web:sin-nginx
+    - docker cp temp:/mi-web ./verificacion
+    - ls verificacion
+    - docker rm temp
+
