@@ -1,20 +1,18 @@
-# Imagen base ligera y limpia
-FROM ubuntu:latest
+FROM ubuntu:22.04
 
-# Evita errores de interacción
+# Evita preguntas al instalar
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Actualiza y agrega git (opcional)
+# Instala Git (opcional) y crea la carpeta del sitio
 RUN apt update && apt install -y git && apt clean
-
-# Crea un directorio dentro del contenedor para guardar la web
 RUN mkdir -p /mi-web
 
-# Copia tu web al contenedor
+# Copia los archivos del sitio (carpeta src/) al contenedor
 COPY src/ /mi-web
 
-# Establece el directorio de trabajo
+# Directorio de trabajo
 WORKDIR /mi-web
 
-# Comando por defecto (para que el contenedor quede activo en pruebas)
+# Mantiene el contenedor activo
 CMD ["tail", "-f", "/dev/null"]
+

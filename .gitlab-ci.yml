@@ -13,14 +13,14 @@ stages:
 build-image:
   stage: build
   script:
-    - docker build -t mi-web:sin-nginx .
-    - docker images
+    - docker build -t mi-web2 .
 
 verify-content:
   stage: verify
   script:
-    - docker create --name temp mi-web:sin-nginx
+    - docker create --name temp mi-web2
     - docker cp temp:/mi-web ./verificacion
     - ls verificacion
     - docker rm temp
+
 
