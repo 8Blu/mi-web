@@ -7,20 +7,13 @@ variables:
   DOCKER_DRIVER: overlay2
 
 stages:
-  - build
-  - verify
+  - test
 
-build-image:
-  stage: build
+build-and-verify:
+  stage: test
   script:
     - docker build -t mi-web2 .
-
-verify-content:
-  stage: verify
-  script:
     - docker create --name temp mi-web2
     - docker cp temp:/mi-web ./verificacion
-    - ls verificacion
+    - ls -l verificacion
     - docker rm temp
-
-
