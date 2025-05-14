@@ -1,5 +1,5 @@
 # Imagen base Linux
-FROM Ubuntu:latest
+FROM ubuntu:latest
 
 # Instalar Git (opcional, si usarás git clone en CI/CD)
 RUN apk update && apk add git
