@@ -11,6 +11,8 @@
   <div id="contenedor">
     <h2>Evaluación</h2>
 
+    <!-- Se eliminó action y method, ya que GitHub Pages no acepta POST -->
+    <!-- La validación se maneja por JS, no se envía el formulario -->
     <form id="formulario" onsubmit="return validarFormulario();">
       <table>
         <tr>
@@ -36,4 +38,11 @@
         <tr>
           <td class="botones" colspan="3">
             <input type="submit" value="Enviar evaluación">
-            <input type="reset" value="Borrar todo"
+            <input type="reset" value="Borrar todo">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+</html>
