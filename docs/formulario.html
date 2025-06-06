@@ -3,42 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Evaluacion</title>
+  <title>Formulario de Evaluación</title>
   <link rel="stylesheet" href="estilos.css" type="text/css">
   <script src="formulario.js" defer></script>
 </head>
 <body>
   <div id="contenedor">
-    <h2>Evaluacion</h2>
+    <h2>Evaluación</h2>
 
-    <!-- Formulario con validacion en el evento onsubmit -->
-    <form action="#" method="post" id="formulario" onsubmit="return validarFormulario();">
+    <form id="formulario" onsubmit="return validarFormulario();">
       <table>
         <tr>
-          <!-- Campo para ingresar una nota entre 1 y 10 -->
-          <td><label class="titulo" for="nota">Nota (1-10) <span class="requerido">*</span></label></td>
+          <td>
+            <label class="titulo" for="nota">
+              Nota (1-10) <span class="requerido">*</span>
+            </label>
+          </td>
           <td class="separacion"></td>
           <td>
             <input type="number" id="nota" name="nota" min="1" max="10">
           </td>
         </tr>
         <tr>
-          <!-- Campo de texto para ingresar un comentario -->
-          <td><label class="titulo" for="comentario">Comentario</label></td>
+          <td>
+            <label class="titulo" for="comentario">Comentario</label>
+          </td>
           <td class="separacion"></td>
           <td>
             <textarea id="comentario" name="comentario" rows="5" cols="50"></textarea>
           </td>
         </tr>
         <tr>
-          <!-- Botones para enviar o resetear el formulario -->
           <td class="botones" colspan="3">
-            <input type="submit" value="Enviar evaluacion">
-            <input type="reset" value="Borrar todo">
-          </td>
-        </tr>
-      </table>
-    </form>
-  </div>
-</body>
-</html>
+            <input type="submit" value="Enviar evaluación">
+            <input type="reset" value="Borrar todo"
