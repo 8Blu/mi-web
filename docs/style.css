@@ -1,31 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+	font: 16px Arial, sans-serif;
+	background: #f0f4f8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
 }
 
 .container {
-  text-align: center;
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	background: #FFF;
+	padding: 2em;
+	border-radius: 12px;
+	border: 1px solid #CCC;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 400px;
 }
 
+/* Título principal */
+h1 {
+	font: normal 2em Arial, sans-serif;
+	margin: 0 0 1em 0;
+}
+
+/* Boton */
 button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+	padding: 0.6em 1.2em;
+	font-size: 1em;
+	background-color: #007BFF;
+	color: #FFF;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
+/* Efecto al pasar el raton */
 button:hover {
-  background-color: #0056b3;
+	background-color: #0056b3;
 }
